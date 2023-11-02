@@ -83,6 +83,34 @@ aragast/netology   latest    b453a84e3f7a   12 months ago   2.46GB
 ![test1](/screenshots/1.png)  
 
 2. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи `molecule init scenario --driver-name docker`.
+```
+git clone https://github.com/aleks-sh-devops/08-ansible-04-role.git
+Cloning into '08-ansible-04-role'...
+remote: Enumerating objects: 28, done.
+remote: Counting objects: 100% (28/28), done.
+remote: Compressing objects: 100% (24/24), done.
+remote: Total 28 (delta 4), reused 12 (delta 0), pack-reused 0
+Receiving objects: 100% (28/28), 35.41 KiB | 906.00 KiB/s, done.
+Resolving deltas: 100% (4/4), done.
+
+ansible-galaxy install -r requirements.yml -p roles
+Starting galaxy role install process
+The authenticity of host 'github.com (140.82.121.3)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+- extracting clickhouse to /root/pr_netology/08-ansible-04-role/playbook/roles/clickhouse
+- clickhouse (1.11.0) was installed successfully
+- extracting vector to /root/pr_netology/08-ansible-04-role/playbook/roles/vector
+- vector (1.0.0) was installed successfully
+- extracting lighthouse to /root/pr_netology/08-ansible-04-role/playbook/roles/lighthouse
+- lighthouse (1.0.0) was installed successfully
+
+molecule init scenario --driver-name docker
+INFO     Initializing new scenario default...
+INFO     Initialized scenario in /root/pr_netology/08-ansible-04-role/playbook/roles/vector/molecule/default successfully.
+```
+
 3. Добавьте несколько разных дистрибутивов (centos:8, ubuntu:latest) для инстансов и протестируйте роль, исправьте найденные ошибки, если они есть.
 4. Добавьте несколько assert в verify.yml-файл для  проверки работоспособности vector-role (проверка, что конфиг валидный, проверка успешности запуска и др.). 
 5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
