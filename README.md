@@ -131,4 +131,63 @@ INFO     Initialized scenario in /root/pr_netology/08-ansible-04-role/playbook/r
 8. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
 9. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
+```
+molecule init scenario tox --driver-name=podman
+```
+molecule.yml:  
+```
+---
+dependency:
+  name: galaxy
+driver:
+  name: podman
+platforms:
+  - name: centos7
+    image: docker.io/pycontribs/centos:7
+    pre_build_image: true
+  - name: debian
+    image: docker.io/pycontribs/debian:latest
+    pre_build_image: true
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
+scenario:
+  test_sequence:
+    - destroy
+    - create
+    - converge
+    - destroy
+```
+
+tox.ini:
+```
+[tox]
+minversion = 1.8
+basepython = python3.6
+envlist = py{37,39}-ansible{210,30}
+skipsdist = true
+
+[testenv]
+passenv = *
+deps =
+    -r tox-requirements.txt
+    ansible210: ansible<3.0
+    ansible30: ansible<3.1
+commands =
+    {posargs:molecule test -s tox --destroy always}
+```
+
+```
+docker run --privileged=True -v /root/pr_netology/vector_role:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
+```
+![test3](/screenshots/3.png)  
+
+
+На основе сценария токса сделал сценарий для молекулы с драйвером подман. Перед прогоном ставим подман:  
+```
+apt install podman -y
+```
+![test4](/screenshots/4.png)  
+
 После выполнения у вас должно получится два сценария molecule и один tox.ini файл в репозитории. Не забудьте указать в ответе теги решений Tox и Molecule заданий. В качестве решения пришлите ссылку на  ваш репозиторий и скриншоты этапов выполнения задания. 
