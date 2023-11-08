@@ -118,7 +118,7 @@ INFO     Initialized scenario in /root/pr_netology/08-ansible-04-role/playbook/r
 ![test2](/screenshots/2.png)  
 
 5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.  
-![Тегированная роль](https://github.com/aleks-sh-devops/vector-role/tree/1.0.1)  
+![Тегированная роль](https://github.com/aleks-sh-devops/vector-role/tree/1.0.4)  
 
 
 ### Tox
