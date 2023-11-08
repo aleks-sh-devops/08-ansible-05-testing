@@ -179,7 +179,7 @@ commands =
 ```
 
 ```
-docker run --privileged=True -v /root/pr_netology/vector_role:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
+docker run --privileged=True -v ${PWD}:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
 ```
 ![test3](/screenshots/3.png)  
 
