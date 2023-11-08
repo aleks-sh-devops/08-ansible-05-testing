@@ -189,5 +189,7 @@ docker run --privileged=True -v ${PWD}:/opt/vector-role -w /opt/vector-role -it 
 apt install podman -y
 ```
 ![test4](/screenshots/4.png)  
+![Тегированная роль2](https://github.com/aleks-sh-devops/vector-role/tree/1.0.6)  
+
 
 После выполнения у вас должно получится два сценария molecule и один tox.ini файл в репозитории. Не забудьте указать в ответе теги решений Tox и Molecule заданий. В качестве решения пришлите ссылку на  ваш репозиторий и скриншоты этапов выполнения задания. 
