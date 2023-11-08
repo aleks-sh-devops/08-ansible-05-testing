@@ -118,7 +118,7 @@ INFO     Initialized scenario in /root/pr_netology/08-ansible-04-role/playbook/r
 ![test2](/screenshots/2.png)  
 
 5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.  
-![Тегированная роль](https://github.com/aleks-sh-devops/vector-role/tree/1.0.4)  
+![Тегированная роль1](https://github.com/aleks-sh-devops/vector-role/tree/1.0.4)  
 
 
 ### Tox
@@ -182,7 +182,7 @@ commands =
 docker run --privileged=True -v ${PWD}:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash
 ```
 ![test3](/screenshots/3.png)  
-
+![Тегированная роль2](https://github.com/aleks-sh-devops/vector-role/tree/1.0.5)  
 
 На основе сценария токса сделал сценарий для молекулы с драйвером подман. Перед прогоном ставим подман:  
 ```
